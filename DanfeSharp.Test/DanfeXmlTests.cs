@@ -46,5 +46,8 @@ namespace DanfeSharp.Test
 
         [TestMethod]
         public void v4_ComLocalRetirada() => TestXml("v4.00/v4_ComLocalRetirada.xml");
+
+        [TestMethod]
+        public void v4_NFCe() => TestXml("v4.00/35260205007542000100650020001944071288672179.xml");
     }
 }

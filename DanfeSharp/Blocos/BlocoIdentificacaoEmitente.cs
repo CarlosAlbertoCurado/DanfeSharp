@@ -15,7 +15,7 @@ namespace DanfeSharp.Blocos
         public BlocoIdentificacaoEmitente(DanfeViewModel viewModel, Estilo estilo) : base(viewModel, estilo)
         {
 
-            var textoConsulta = new TextoSimples(Estilo, Strings.TextoConsulta)
+            var textoConsulta = new TextoSimples(Estilo, Strings.TxtConsulta(viewModel.modDocto, viewModel.ChaveAcesso.Substring(0,2)))
             {
                 Height = 8,
                 AlinhamentoHorizontal = AlinhamentoHorizontal.Centro,

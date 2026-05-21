@@ -44,6 +44,8 @@ namespace DanfeSharp.Modelo
             }
         }
 
+        public int modDocto { get; set; }
+
         /// <summary>
         /// <para>Número do Documento Fiscal</para>
         /// <para>Tag nNF</para>

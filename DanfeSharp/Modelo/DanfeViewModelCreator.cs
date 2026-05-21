@@ -193,9 +193,9 @@ namespace DanfeSharp.Modelo
             var ide = infNfe.ide;
             model.TipoEmissao = ide.tpEmis;
 
-            if (ide.mod != 55)
+            if (ide.mod != 55 && ide.mod != 65)
             {
-                throw new NotSupportedException("Somente o mod==55 está implementado.");
+                throw new NotSupportedException("Somente o mod==55 ou mod==65 está implementado.");
             }
 
             if(!FormasEmissaoSuportadas.Contains(model.TipoEmissao))
@@ -203,7 +203,7 @@ namespace DanfeSharp.Modelo
                 throw new NotSupportedException($"O tpEmis {ide.tpEmis} não é suportado.");
             }
 
-            model.Orientacao = ide.tpImp == 1 ? Orientacao.Retrato : Orientacao.Paisagem;
+            model.Orientacao = ide.tpImp == 1 || ide.mod == 65 ? Orientacao.Retrato : Orientacao.Paisagem;
 
             var infProt = procNfe.protNFe.infProt;
             model.CodigoStatusReposta = infProt.cStat;
@@ -212,6 +212,7 @@ namespace DanfeSharp.Modelo
             model.TipoAmbiente = (int)ide.tpAmb;
             model.NfNumero = ide.nNF;
             model.NfSerie = ide.serie;
+            model.modDocto = ide.mod;
             model.NaturezaOperacao = ide.natOp;
             model.ChaveAcesso = procNfe.NFe.infNFe.Id.Substring(3);
             model.TipoNF = (int)ide.tpNF;

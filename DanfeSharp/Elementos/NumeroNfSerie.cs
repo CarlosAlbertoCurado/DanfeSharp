@@ -7,11 +7,13 @@ namespace DanfeSharp
     {
         public String NfNumero { get; private set; }
         public String NfSerie { get; private set; }
+        public String ModDocto { get; private set; }
 
-        public NumeroNfSerie(Estilo estilo, String nfNumero, String nfSerie) : base(estilo)
+        public NumeroNfSerie(Estilo estilo, String nfNumero, String nfSerie, String modDocto) : base(estilo)
         {
             NfNumero = nfNumero;
             NfSerie = nfSerie;
+            ModDocto = modDocto;
         }
 
         public override void Draw(Gfx gfx)
@@ -23,7 +25,7 @@ namespace DanfeSharp
             var f1 = Estilo.CriarFonteNegrito(14);
             var f2 = Estilo.CriarFonteNegrito(11F);
 
-            gfx.DrawString("NF-e", r, f1, AlinhamentoHorizontal.Centro);
+            gfx.DrawString(ModDocto == "55" ? "NF-e" : "NFC-e", r, f1, AlinhamentoHorizontal.Centro);
 
             r = r.CutTop(f1.AlturaLinha);
 

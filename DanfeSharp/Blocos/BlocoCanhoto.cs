@@ -11,7 +11,7 @@ namespace DanfeSharp.Blocos
         public BlocoCanhoto(DanfeViewModel viewModel, Estilo estilo) : base(viewModel, estilo)
         {
             var textoRecebimento = new TextoSimples(estilo, viewModel.TextoRecebimento) { Height = TextoRecebimentoAltura, TamanhoFonte = 8 };
-            var nfe = new NumeroNfSerie(estilo, viewModel.NfNumero.ToString(Formatador.FormatoNumeroNF), viewModel.NfSerie.ToString()) { Height = AlturaLinha2 + TextoRecebimentoAltura, Width = 30 };
+            var nfe = new NumeroNfSerie(estilo, viewModel.NfNumero.ToString(Formatador.FormatoNumeroNF), viewModel.NfSerie.ToString(), viewModel.modDocto.ToString()) { Height = AlturaLinha2 + TextoRecebimentoAltura, Width = 30 };
 
             var campos = new LinhaCampos(Estilo) { Height = AlturaLinha2 }
                .ComCampo("Data de Recebimento", null)
