@@ -39,9 +39,9 @@ namespace DanfeSharp
 
             // 7.7.7 Conteúdo dos Campos do Quadro “Dados dos Produtos/Serviços”
             // Deverá ter tamanho mínimo de seis(6) pontos, ou 17 CPP.
-
-            FonteCorpo = estilo.CriarFonteRegular(6F);
-            FonteCabecalho = estilo.CriarFonteRegular(6F);
+            // Aqui
+            FonteCorpo = estilo.CriarFonteRegular(5F);
+            FonteCabecalho = estilo.CriarFonteRegular(5F);
         }
 
         public Tabela ComColuna(float larguraP, AlinhamentoHorizontal ah, params String[] cabecalho)

@@ -222,7 +222,7 @@ namespace DanfeSharp.Esquemas.NFe
         public string vUnTrib { get; set; }
         public string vFrete { get; set; }        
         public string vSeg { get; set; }
-        public string vDesc { get; set; }
+        public double vDesc { get; set; }
         public string vOutro { get; set; }
         public string xPed { get; set; }
         public string nItemPed { get; set; }
@@ -240,6 +240,11 @@ namespace DanfeSharp.Esquemas.NFe
         public double vBC { get; set; }
         public double pICMS { get; set; }
         public double vICMS { get; set; }
+        public double pRedBCST { get; set; }
+        public double pICMSST { get; set; }
+        public double vBCST { get; set; }
+        public double vICMSST { get; set; }
+        public double pRedBC { get; set; }
     }
 
     public class ImpostoICMS00 : ImpostoICMS { }

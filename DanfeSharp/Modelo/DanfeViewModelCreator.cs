@@ -203,6 +203,7 @@ namespace DanfeSharp.Modelo
                 throw new NotSupportedException($"O tpEmis {ide.tpEmis} não é suportado.");
             }
 
+            // Mudar aqui
             model.Orientacao = ide.tpImp == 1 || ide.mod == 65 ? Orientacao.Retrato : Orientacao.Paisagem;
 
             var infProt = procNfe.protNFe.infProt;
@@ -251,10 +252,11 @@ namespace DanfeSharp.Modelo
                 produto.Unidade = det.prod.uCom;
                 produto.Quantidade = det.prod.qCom;
                 produto.ValorUnitario = det.prod.vUnCom;
+                produto.ValorDesconto = det.prod.vDesc;
                 produto.ValorTotal = det.prod.vProd;
                 produto.InformacoesAdicionais = det.infAdProd;
 
-                var imposto = det.imposto;
+                ProdutoImposto imposto = det.imposto;
 
                 if (imposto != null)
                 {
@@ -268,6 +270,11 @@ namespace DanfeSharp.Modelo
                             produto.BaseIcms = icms.vBC;
                             produto.AliquotaIcms = icms.pICMS;
                             produto.OCst = icms.orig + icms.CST + icms.CSOSN;
+                            produto.AliqReducaoBC = icms.pRedBC;
+                            produto.AliqIcmsST = icms.pICMSST;
+                            produto.AliqReducaoBCST = icms.pRedBCST;
+                            produto.ValorBCIcmsST = icms.vBCST;
+                            produto.ValorIcmsST = icms.vICMSST;
                         }
                     }
 

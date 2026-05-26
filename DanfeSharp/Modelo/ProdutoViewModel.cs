@@ -59,6 +59,8 @@ namespace DanfeSharp.Modelo
         /// </summary>
         public double ValorUnitario { get; set; }
 
+        public double ValorDesconto { get; set; }
+
         /// <summary>
         /// <para>Valor Total Bruto dos Produtos ou Serviços</para>
         /// <para>Tag vProd</para>
@@ -82,6 +84,16 @@ namespace DanfeSharp.Modelo
         /// <para>Tag pICMS</para>
         /// </summary>
         public double AliquotaIcms { get; set; }
+
+        public double AliqReducaoBC { get; set; }
+        public double AliqReducaoBCST { get; set; }
+
+        public double AliqIcmsST { get; set; }
+
+        public double ValorBCIcmsST { get; set; }
+
+        public double ValorIcmsST { get; set; }
+
 
         /// <summary>
         /// <para>Valor do IPI</para>
